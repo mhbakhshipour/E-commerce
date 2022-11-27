@@ -29,9 +29,14 @@ Clone the `E-commerce` repository using git:
 git clone https://github.com/mhbakhshipour/e-commerce
 ```
 
-Install dependencies with this command:
+Install dependencies with this command (DEV mode):
 ```bash
 poetry install
+```
+
+Install dependencies with this command (PROD mode):
+```bash
+poetry install --without dev
 ```
 
 Run the application with this command:
