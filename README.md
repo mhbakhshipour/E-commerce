@@ -36,7 +36,7 @@ poetry install
 
 Run the application with this command:
 ```bash
-uvicorn main:app --reload
+poetry run uvicorn main:app --reload
 ```
 
 ## Tech Stack
