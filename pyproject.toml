@@ -1,12 +1,17 @@
 [tool.poetry]
-name = "poetry"
+name = "e-commerce"
 version = "0.1.0"
 description = ""
-authors = ["mohamad <mohammmadhossein.t@arianalabs.io>"]
+authors = ["Mohammad Hossein Bakhshipour <mh.bakhshipour@yahoo.com>", Mohammad Hosein Tahan"mohamadhosseintahan@yahoo.com>"]
 readme = "README.md"
+packages = [{include = "e_commerce"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = {extras = ["all"], version = "^0.87.0"}
+pydantic = {extras = ["all"], version = "^1.10.2"}
+daphne = "^4.0.0"
+uvicorn = "^0.20.0"
 
 
 [build-system]
