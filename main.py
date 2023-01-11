@@ -8,7 +8,7 @@ from routers.auth import router as auth_routers
 
 from dotenv import load_dotenv
 
-load_dotenv("restaurant_crm/.env")
+load_dotenv("e_commerce/.env")
 
 app = FastAPI(title="Restaurant CRM", openapi_url="/api/openapi.json")
 

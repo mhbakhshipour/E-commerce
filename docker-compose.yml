@@ -7,9 +7,9 @@ services:
     ports:
       - 5445:5432
     env_file:
-      - ./restaurant_crm/db.env
+      - ./e_commerce/db.env
     healthcheck:
-      test: ["CMD-SHELL", "sh -c 'pg_isready -U mhbp -d restaurant_crm'"]
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U mhbp -d e_commerce'"]
       interval: 10s
       timeout: 3s
       retries: 3
@@ -18,10 +18,10 @@ services:
   backend:
     build: .
     volumes:
-      - ./restaurant_crm/:/restaurant_crm/
+      - ./e_commerce/:/e_commerce/
     entrypoint: ./entrypoint.sh
     env_file:
-      - ./restaurant_crm/.env
+      - ./e_commerce/.env
     ports:
       - 8007:8000
     depends_on:

@@ -11,7 +11,7 @@ import os, sys
 from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-load_dotenv(os.path.join(BASE_DIR, "restaurant_crm/.env"))
+load_dotenv(os.path.join(BASE_DIR, "e_commerce/.env"))
 sys.path.append(BASE_DIR)
 #------------------------------------------------------------#
 

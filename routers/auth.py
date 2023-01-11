@@ -8,8 +8,8 @@ from schemas.auth import UserLoginSchema, UserCreateSchema
 from models.user import User
 
 from utils.auth import *
-from restaurant_crm.database import get_db
-from restaurant_crm.config import settings
+from e_commerce.database import get_db
+from e_commerce.config import settings
 
 
 router = APIRouter()

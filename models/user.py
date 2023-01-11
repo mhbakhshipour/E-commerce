@@ -4,7 +4,7 @@ import datetime
 from sqlalchemy import Boolean, Column, String, DateTime
 from sqlalchemy.dialects.postgresql import UUID
 
-from restaurant_crm.database import Base
+from e_commerce.database import Base
 
 
 class User(Base):

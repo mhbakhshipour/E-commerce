@@ -10,18 +10,18 @@ RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 FROM python:3.11.1
 
-WORKDIR /RESTAURANT-CRM
+WORKDIR /E-commerce
 
-COPY --from=requirements-stage /tmp/requirements.txt /RESTAURANT-CRM/requirements.txt
+COPY --from=requirements-stage /tmp/requirements.txt /E-commerce/requirements.txt
 
 RUN apt-get update \
     && apt-get install gcc -y \
     && apt-get install libpq-dev -y \
     && apt-get clean
 
-RUN pip install --no-cache-dir --upgrade -r /RESTAURANT-CRM/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /E-commerce/requirements.txt
 
-COPY . /RESTAURANT-CRM/
+COPY . /E-commerce/
 
 RUN chmod u+x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]

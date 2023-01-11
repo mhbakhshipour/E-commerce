@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "Restaurant-CRM"
+name = "E-commerce"
 version = "0.1.0"
 description = ""
 authors = ["Mohammad Hossein Bakhshipour <mh.bakhshipour@yahoo.com>"]
 readme = "README.md"
-packages = [{include = "restaurant_crm"}]
+packages = [{include = "e_commerce"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

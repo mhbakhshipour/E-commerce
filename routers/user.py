@@ -5,7 +5,7 @@ from fastapi_jwt_auth import AuthJWT
 from models.user import User
 from schemas.user import *
 
-from restaurant_crm.database import get_db
+from e_commerce.database import get_db
 from utils.auth import hash_password, require_user
 
 router = APIRouter()
