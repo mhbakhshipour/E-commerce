@@ -5,20 +5,6 @@ products a Postgresql database and displays them. Users can select to display pr
 click on any product to get more information including pricing, reviews and rating. Users can select items and 
 add them to their shopping cart
 
-Here are screenshots that show the E-commerce application in use.
-
-**Home Page**
-![Home Page]()
-
----
-
-**Item Detail Page**
-![Item Detail]()
-
----
-
-**Shopping Cart**
-![Shopping Cart]()
 
 ## Getting Started
 To get started  you can simply clone this `E-commerce` repository and install the dependencies.
@@ -37,6 +23,11 @@ poetry install
 Install dependencies with this command (PROD mode):
 ```bash
 poetry install --without dev
+```
+
+migrate models using alembic with this command:
+```bash
+poetry run alembic upgrade head
 ```
 
 Run the application with this command:

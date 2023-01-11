@@ -1,4 +1,4 @@
-FROM python:3.10 as requirements-stage
+FROM python:3.11.1 as requirements-stage
 
 WORKDIR /tmp
 
@@ -8,14 +8,20 @@ COPY ./pyproject.toml ./poetry.lock* /tmp/
 
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-FROM python:3.10
+FROM python:3.11.1
 
-WORKDIR /e_commerce
+WORKDIR /RESTAURANT-CRM
 
-COPY --from=requirements-stage /tmp/requirements.txt /e_commerce/requirements.txt
+COPY --from=requirements-stage /tmp/requirements.txt /RESTAURANT-CRM/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /e_commerce/requirements.txt
+RUN apt-get update \
+    && apt-get install gcc -y \
+    && apt-get install libpq-dev -y \
+    && apt-get clean
 
-COPY ./e_commerce /e_commerce/e_commerce
+RUN pip install --no-cache-dir --upgrade -r /RESTAURANT-CRM/requirements.txt
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8081"]
+COPY . /RESTAURANT-CRM/
+
+RUN chmod u+x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]

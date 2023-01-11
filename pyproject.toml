@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "e-commerce"
+name = "Restaurant-CRM"
 version = "0.1.0"
 description = ""
-authors = ["Mohammad Hossein Bakhshipour <mh.bakhshipour@yahoo.com>", "Mohammad Hosein Tahan <mohamadhosseintahan@yahoo.com>"]
+authors = ["Mohammad Hossein Bakhshipour <mh.bakhshipour@yahoo.com>"]
 readme = "README.md"
-packages = [{include = "e_commerce"}]
+packages = [{include = "restaurant_crm"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,6 +12,12 @@ fastapi = {extras = ["all"], version = "^0.87.0"}
 pydantic = {extras = ["all"], version = "^1.10.2"}
 daphne = "^4.0.0"
 uvicorn = "^0.20.0"
+alembic = "^1.9.1"
+python-dotenv = "^0.21.0"
+psycopg2 = "^2.9.5"
+passlib = "^1.7.4"
+bcrypt = "^4.0.1"
+fastapi-jwt-auth = "^0.5.0"
 
 
 [tool.poetry.group.dev.dependencies]
